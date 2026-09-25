@@ -1,1277 +1,1200 @@
-/* =========================
-   GLOBAL
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Poppins", sans-serif;
-    background: #080b12;
-    color: #ffffff;
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-}
-
-:root {
-    --bg: #080b12;
-    --bg2: #0e131d;
-    --card: #111823;
-    --card2: #151d2a;
-
-    --primary: #00d9ff;
-    --primary-dark: #00a8c7;
-
-    --text: #ffffff;
-    --muted: #a9b2c1;
-    --border: rgba(255,255,255,0.08);
-
-    --shadow: 0 20px 60px rgba(0,0,0,0.35);
-}
-
-
-/* =========================
-   SCROLLBAR
-========================= */
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 10px;
-}
-
-
-/* =========================
-   NAVBAR
-========================= */
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(8,11,18,0.85);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--border);
-}
-
-.navbar {
-    max-width: 1200px;
-    margin: auto;
-    padding: 18px 30px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 30px;
-    font-weight: 800;
-    color: white;
-}
-
-.logo span {
-    color: var(--primary);
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    font-size: 14px;
-    color: var(--muted);
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--primary);
-}
-
-.menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 25px;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 100vh;
-    max-width: 1200px;
-    margin: auto;
-
-    padding: 150px 30px 80px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 80px;
-}
-
-.hero-content {
-    max-width: 700px;
-}
-
-.welcome {
-    color: var(--primary);
-    letter-spacing: 4px;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: clamp(42px, 6vw, 72px);
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.hero h1 span {
-    color: var(--primary);
-}
-
-.hero h2 {
-    font-size: 27px;
-    color: #dce2eb;
-    margin-bottom: 20px;
-}
-
-.hero h2 span {
-    color: var(--primary);
-}
-
-.hero-description {
-    color: var(--muted);
-    max-width: 650px;
-    font-size: 17px;
-    margin-bottom: 30px;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-
-/* =========================
-   BUTTON
-========================= */
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 13px 24px;
+<!DOCTYPE html>
+<html lang="en">
 
-    border-radius: 8px;
-
-    font-size: 14px;
-    font-weight: 600;
+<head>
 
-    transition: 0.3s;
-}
+    <meta charset="UTF-8">
 
-.primary-btn {
-    background: var(--primary);
-    color: #001018;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.primary-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0,217,255,0.25);
-}
+    <meta name="description"
+          content="Khatijatul Kubra - Software Engineer, Web Developer and Engineering Student">
 
-.outline-btn {
-    border: 1px solid var(--primary);
-    color: white;
-}
+    <meta name="author"
+          content="Khatijatul Kubra">
 
-.outline-btn:hover {
-    background: var(--primary);
-    color: #001018;
-}
+    <title>Khatijatul Kubra | Portfolio</title>
 
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-/* =========================
-   SOCIAL
-========================= */
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-.social-links {
-    display: flex;
-    gap: 12px;
-    margin-top: 30px;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-.social-links a {
-    width: 42px;
-    height: 42px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    border: 1px solid var(--border);
-    border-radius: 50%;
 
-    color: var(--muted);
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-    transition: 0.3s;
-}
+</head>
 
-.social-links a:hover {
-    color: var(--primary);
-    border-color: var(--primary);
-    transform: translateY(-3px);
-}
 
+<body>
 
-/* =========================
-   HERO IMAGE
-========================= */
 
-.hero-image {
-    position: relative;
-    min-width: 350px;
-}
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-.profile-circle {
-    width: 330px;
-    height: 330px;
+<header>
 
-    border-radius: 50%;
+    <nav class="navbar">
 
-    border: 2px solid var(--primary);
+        <a href="#home" class="logo">
+            KK<span>.</span>
+        </a>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    background: radial-gradient(
-        circle,
-        #162536,
-        #0b111b
-    );
+        <button class="menu-btn" id="menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
 
-    box-shadow:
-        0 0 70px rgba(0,217,255,0.12);
-}
 
-.profile-placeholder {
-    width: 260px;
-    height: 260px;
+        <ul class="nav-links" id="nav-links">
 
-    border-radius: 50%;
+            <li>
+                <a href="#home">Home</a>
+            </li>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            <li>
+                <a href="#about">About</a>
+            </li>
 
-    background: #121b28;
+            <li>
+                <a href="#education">Education</a>
+            </li>
 
-    color: var(--primary);
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
 
-    font-size: 100px;
-}
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
 
+            <li>
+                <a href="#certificates">Certificates</a>
+            </li>
 
-/* =========================
-   FLOATING CARDS
-========================= */
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
 
-.floating-card {
-    position: absolute;
+        </ul>
 
-    background: var(--card2);
+    </nav>
 
-    border: 1px solid var(--border);
+</header>
 
-    padding: 12px 18px;
 
-    border-radius: 10px;
 
-    box-shadow: var(--shadow);
+<!-- =====================================================
+     HOME
+===================================================== -->
 
-    font-size: 13px;
-}
+<section class="hero" id="home">
 
-.floating-card i {
-    color: var(--primary);
-    margin-right: 8px;
-}
 
-.card-one {
-    top: 30px;
-    right: -20px;
-}
+    <div class="hero-content">
 
-.card-two {
-    bottom: 30px;
-    left: -20px;
-}
 
+        <p class="welcome">
+            WELCOME TO MY PORTFOLIO
+        </p>
 
-/* =========================
-   SECTION
-========================= */
 
-.section {
-    padding: 110px 30px;
+        <h1>
+            Hi, I'm
+            <span>Khatijatul Kubra</span>
+        </h1>
 
-    max-width: 1200px;
 
-    margin: auto;
-}
+        <h2>
+            Software Engineer
+            <span>|</span>
+            Web Developer
+        </h2>
 
-.dark-section {
-    max-width: none;
 
-    padding-left: max(30px, calc((100% - 1200px) / 2));
-    padding-right: max(30px, calc((100% - 1200px) / 2));
+        <p class="hero-description">
 
-    background: var(--bg2);
-}
+            I am an engineering student passionate about
+            software development, web technologies and
+            data science. I enjoy transforming ideas into
+            practical and user-friendly digital solutions.
 
-.section-heading {
-    text-align: center;
-    margin-bottom: 60px;
-}
+        </p>
 
-.section-heading p {
-    color: var(--primary);
 
-    font-size: 12px;
+        <div class="hero-buttons">
 
-    letter-spacing: 3px;
 
-    margin-bottom: 8px;
-}
+            <a href="#projects"
+               class="btn primary-btn">
 
-.section-heading h2 {
-    font-size: 42px;
-}
+                <i class="fas fa-code"></i>
 
-.section-heading h2 span {
-    color: var(--primary);
-}
+                View My Projects
 
+            </a>
 
-/* =========================
-   ABOUT
-========================= */
 
-.about-container {
-    display: grid;
-    grid-template-columns: 350px 1fr;
+            <a href="#contact"
+               class="btn outline-btn">
 
-    gap: 70px;
+                <i class="fas fa-envelope"></i>
 
-    align-items: center;
-}
+                Contact Me
 
-.about-image {
-    height: 350px;
+            </a>
 
-    border-radius: 20px;
 
-    background: linear-gradient(
-        135deg,
-        #101a28,
-        #0b111a
-    );
+            <a href="mailto:kubra67076@gmail.com"
+               class="btn outline-btn">
 
-    border: 1px solid var(--border);
+                <i class="fas fa-paper-plane"></i>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+                Email Me
 
-.about-icon {
-    width: 180px;
-    height: 180px;
+            </a>
 
-    border-radius: 50%;
 
-    background: #111c2a;
+        </div>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    color: var(--primary);
+        <!-- Social Media -->
 
-    font-size: 80px;
-}
+        <div class="social-links">
 
-.about-content h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
 
-.about-content p {
-    color: var(--muted);
-    margin-bottom: 15px;
-}
+            <a href="https://github.com/kubra67076-sketch"
+               target="_blank"
+               aria-label="GitHub">
 
-.about-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+                <i class="fab fa-github"></i>
 
-    gap: 15px;
+            </a>
 
-    margin-top: 25px;
-}
 
-.about-info div {
-    padding: 12px;
+            <a href="https://www.linkedin.com/in/khatijatul-kubra-0118b1334/"
+               target="_blank"
+               aria-label="LinkedIn">
 
-    background: var(--card);
+                <i class="fab fa-linkedin"></i>
 
-    border-radius: 8px;
+            </a>
 
-    border: 1px solid var(--border);
-}
 
-.about-info strong {
-    color: var(--primary);
+            <a href="mailto:kubra67076@gmail.com"
+               aria-label="Email">
 
-    display: block;
+                <i class="fas fa-envelope"></i>
 
-    font-size: 12px;
-}
+            </a>
 
-.about-info span {
-    font-size: 13px;
-    color: var(--muted);
-}
 
+        </div>
 
-/* =========================
-   EDUCATION
-========================= */
 
-.timeline {
-    max-width: 800px;
-    margin: auto;
+    </div>
 
-    position: relative;
-}
 
-.timeline::before {
-    content: "";
 
-    position: absolute;
+    <!-- Hero Image -->
 
-    left: 20px;
-    top: 0;
-    bottom: 0;
+    <div class="hero-image">
 
-    width: 2px;
 
-    background: var(--primary);
-}
+        <div class="profile-circle">
 
-.timeline-item {
-    position: relative;
 
-    padding-left: 65px;
+            <div class="profile-placeholder">
 
-    margin-bottom: 50px;
-}
+                <i class="fas fa-user"></i>
 
-.timeline-dot {
-    position: absolute;
+            </div>
 
-    left: 0;
-    top: 0;
 
-    width: 42px;
-    height: 42px;
+        </div>
 
-    border-radius: 50%;
 
-    background: var(--primary);
+        <div class="floating-card card-one">
 
-    color: #001018;
+            <i class="fas fa-code"></i>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+            Java
 
-.timeline-content {
-    background: var(--card);
+        </div>
 
-    padding: 25px;
 
-    border-radius: 12px;
+        <div class="floating-card card-two">
 
-    border: 1px solid var(--border);
-}
+            <i class="fas fa-laptop-code"></i>
 
-.timeline-date {
-    color: var(--primary);
+            Web Developer
 
-    font-size: 12px;
+        </div>
 
-    font-weight: 600;
-}
 
-.timeline-content h3 {
-    margin: 5px 0;
-}
+    </div>
 
-.timeline-content h4 {
-    color: #ccd4df;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
 
-.timeline-content p {
-    color: var(--muted);
-    font-size: 14px;
-}
+</section>
 
 
-/* =========================
-   SKILLS
-========================= */
 
-.skills-container {
-    display: grid;
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
-    grid-template-columns:
-        repeat(4, 1fr);
+<section class="section" id="about">
 
-    gap: 20px;
-}
 
-.skill-card {
-    background: var(--card);
+    <div class="section-heading">
 
-    border: 1px solid var(--border);
+        <p>GET TO KNOW ME</p>
 
-    padding: 25px;
+        <h2>
+            About <span>Me</span>
+        </h2>
 
-    border-radius: 15px;
+    </div>
 
-    transition: 0.3s;
-}
 
-.skill-card:hover {
-    transform: translateY(-6px);
 
-    border-color: var(--primary);
-}
+    <div class="about-container">
 
-.skill-icon {
-    font-size: 35px;
 
-    color: var(--primary);
+        <div class="about-image">
 
-    margin-bottom: 15px;
-}
+            <div class="about-icon">
 
-.skill-card h3 {
-    margin-bottom: 15px;
-}
+                <i class="fas fa-user-graduate"></i>
 
-.skill-card small {
-    color: var(--muted);
-}
+            </div>
 
-.skill-bar {
-    width: 100%;
-    height: 5px;
+        </div>
 
-    background: #252e3a;
 
-    border-radius: 10px;
 
-    margin-bottom: 8px;
-}
+        <div class="about-content">
 
-.skill-bar span {
-    display: block;
 
-    height: 100%;
+            <h3>
+                Engineering Student & Aspiring Developer
+            </h3>
 
-    background: var(--primary);
 
-    border-radius: 10px;
-}
+            <p>
 
+                Hello! I am
+                <strong>Khatijatul Kubra</strong>,
+                an engineering student interested in
+                software engineering, web development
+                and data science.
 
-/* =========================
-   PROJECTS
-========================= */
+            </p>
 
-.projects-container {
-    display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+            <p>
 
-    gap: 25px;
-}
+                I enjoy learning programming languages,
+                exploring new technologies and developing
+                practical projects that solve real-world
+                problems.
 
-.project-card {
-    background: var(--card);
+            </p>
 
-    border: 1px solid var(--border);
 
-    padding: 30px;
+            <p>
 
-    border-radius: 15px;
+                I believe in continuous learning and
+                improving my technical skills through
+                hands-on projects, training programs
+                and teamwork.
 
-    transition: 0.3s;
-}
+            </p>
 
-.project-card:hover {
-    transform: translateY(-8px);
 
-    border-color: var(--primary);
 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-}
+            <div class="about-info">
 
-.project-top {
-    display: flex;
 
-    justify-content: space-between;
+                <div>
 
-    align-items: center;
+                    <strong>Name</strong>
 
-    margin-bottom: 25px;
-}
+                    <span>
+                        Khatijatul Kubra
+                    </span>
 
-.project-icon {
-    width: 50px;
-    height: 50px;
+                </div>
 
-    border-radius: 10px;
 
-    background: #152333;
+                <div>
 
-    color: var(--primary);
+                    <strong>Role</strong>
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                    <span>
+                        Engineering Student
+                    </span>
 
-    font-size: 22px;
-}
+                </div>
 
-.project-links a {
-    color: var(--muted);
 
-    transition: 0.3s;
-}
+                <div>
 
-.project-links a:hover {
-    color: var(--primary);
-}
+                    <strong>Interest</strong>
 
-.project-card h3 {
-    margin-bottom: 15px;
-}
+                    <span>
+                        Software & Web Development
+                    </span>
 
-.project-card > p {
-    color: var(--muted);
+                </div>
 
-    font-size: 14px;
 
-    margin-bottom: 20px;
-}
+                <div>
 
-.project-tech {
-    display: flex;
+                    <strong>Location</strong>
 
-    flex-wrap: wrap;
+                    <span>
+                        Karnataka, India
+                    </span>
 
-    gap: 8px;
-}
+                </div>
 
-.project-tech span {
-    font-size: 11px;
 
-    padding: 5px 10px;
+            </div>
 
-    background: #192330;
 
-    color: var(--primary);
+        </div>
 
-    border-radius: 20px;
-}
 
+    </div>
 
-/* =========================
-   CERTIFICATES
-========================= */
 
-.certificate-container {
-    display: grid;
+</section>
 
-    grid-template-columns:
-        repeat(3, 1fr);
 
-    gap: 20px;
-}
 
-.certificate-card {
-    display: flex;
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
 
-    gap: 20px;
+<section class="section dark-section"
+         id="education">
 
-    background: var(--card);
 
-    border: 1px solid var(--border);
+    <div class="section-heading">
 
-    padding: 25px;
+        <p>MY ACADEMIC JOURNEY</p>
 
-    border-radius: 15px;
+        <h2>
+            <span>Education</span>
+        </h2>
 
-    transition: 0.3s;
-}
+    </div>
 
-.certificate-card:hover {
-    border-color: var(--primary);
 
-    transform: translateY(-5px);
-}
 
-.certificate-icon {
-    min-width: 55px;
-    height: 55px;
+    <div class="timeline">
 
-    border-radius: 10px;
 
-    background: #152333;
+        <div class="timeline-item">
 
-    color: var(--primary);
 
-    display: flex;
+            <div class="timeline-dot">
 
-    align-items: center;
-    justify-content: center;
+                <i class="fas fa-graduation-cap"></i>
 
-    font-size: 22px;
-}
+            </div>
 
-.certificate-card h3 {
-    font-size: 16px;
 
-    margin-bottom: 5px;
-}
+            <div class="timeline-content">
 
-.certificate-card p {
-    color: var(--primary);
 
-    font-size: 13px;
-}
+                <span class="timeline-date">
+                    Present
+                </span>
 
-.certificate-card span {
-    color: var(--muted);
 
-    font-size: 12px;
-}
+                <h3>
+                    Engineering
+                </h3>
 
 
-/* =========================
-   TRAINING
-========================= */
+                <h4>
+                    Engineering Degree
+                </h4>
 
-.training-section {
-    padding-top: 30px;
-}
 
-.training-box {
-    max-width: 900px;
+                <p>
 
-    margin: auto;
+                    Currently pursuing engineering and
+                    developing knowledge in programming,
+                    software development, databases and
+                    modern technologies.
 
-    display: flex;
+                </p>
 
-    gap: 30px;
 
-    padding: 35px;
+            </div>
 
-    background: var(--card);
 
-    border: 1px solid var(--border);
+        </div>
 
-    border-radius: 20px;
-}
 
-.training-icon {
-    min-width: 70px;
-    height: 70px;
 
-    border-radius: 15px;
+        <div class="timeline-item">
 
-    background: var(--primary);
 
-    color: #001018;
+            <div class="timeline-dot">
 
-    display: flex;
+                <i class="fas fa-book"></i>
 
-    align-items: center;
-    justify-content: center;
+            </div>
 
-    font-size: 30px;
-}
 
-.training-content h3 {
-    margin-bottom: 10px;
-}
+            <div class="timeline-content">
 
-.training-content p {
-    color: var(--muted);
 
-    margin-bottom: 20px;
-}
+                <span class="timeline-date">
+                    Academic Journey
+                </span>
 
-.training-tags {
-    display: flex;
 
-    flex-wrap: wrap;
+                <h3>
+                    Technical Learning
+                </h3>
 
-    gap: 8px;
-}
 
-.training-tags span {
-    padding: 5px 12px;
+                <h4>
+                    Programming & Computer Science
+                </h4>
 
-    background: #192330;
 
-    color: var(--primary);
+                <p>
 
-    border-radius: 20px;
+                    Building a strong foundation in
+                    programming, databases, web development
+                    and software engineering through
+                    practical learning.
 
-    font-size: 11px;
-}
+                </p>
 
 
-/* =========================
-   GITHUB
-========================= */
+            </div>
 
-.github-section {
-    text-align: center;
 
-    padding: 100px 30px;
+        </div>
 
-    background: #0d141e;
-}
 
-.github-large {
-    font-size: 70px;
+    </div>
 
-    margin-bottom: 20px;
-}
 
-.github-section h2 {
-    font-size: 38px;
+</section>
 
-    margin-bottom: 10px;
-}
 
-.github-section p {
-    color: var(--muted);
 
-    margin-bottom: 30px;
-}
+<!-- =====================================================
+     SKILLS
+===================================================== -->
 
+<section class="section" id="skills">
 
-/* =========================
-   CONTACT
-========================= */
 
-.contact-container {
-    display: grid;
+    <div class="section-heading">
 
-    grid-template-columns: 1fr 1fr;
+        <p>WHAT I WORK WITH</p>
 
-    gap: 70px;
-}
+        <h2>
+            My <span>Skills</span>
+        </h2>
 
-.contact-info h3 {
-    font-size: 30px;
+    </div>
 
-    margin-bottom: 15px;
-}
 
-.contact-info > p {
-    color: var(--muted);
 
-    margin-bottom: 30px;
-}
+    <div class="skills-container">
 
-.contact-item {
-    display: flex;
 
-    align-items: center;
+        <div class="skill-card">
 
-    gap: 15px;
+            <div class="skill-icon">
+                <i class="fab fa-java"></i>
+            </div>
 
-    margin-bottom: 20px;
-}
+            <h3>Java</h3>
 
-.contact-icon {
-    width: 45px;
-    height: 45px;
+            <div class="skill-bar">
+                <span style="width: 80%;"></span>
+            </div>
 
-    border-radius: 10px;
+            <small>Programming</small>
 
-    background: #152333;
+        </div>
 
-    color: var(--primary);
 
-    display: flex;
 
-    align-items: center;
-    justify-content: center;
-}
+        <div class="skill-card">
 
-.contact-item small {
-    color: var(--primary);
-}
+            <div class="skill-icon">
+                <i class="fab fa-python"></i>
+            </div>
 
-.contact-item p {
-    color: var(--muted);
+            <h3>Python</h3>
 
-    font-size: 14px;
-}
+            <div class="skill-bar">
+                <span style="width: 75%;"></span>
+            </div>
 
+            <small>Programming</small>
 
-/* =========================
-   FORM
-========================= */
+        </div>
 
-.contact-form {
-    display: flex;
 
-    flex-direction: column;
 
-    gap: 15px;
-}
+        <div class="skill-card">
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
+            <div class="skill-icon">
+                <i class="fab fa-html5"></i>
+            </div>
 
-    padding: 15px;
+            <h3>HTML</h3>
 
-    background: var(--card);
+            <div class="skill-bar">
+                <span style="width: 90%;"></span>
+            </div>
 
-    color: white;
+            <small>Web Development</small>
 
-    border: 1px solid var(--border);
+        </div>
 
-    border-radius: 8px;
 
-    font-family: inherit;
 
-    outline: none;
-}
+        <div class="skill-card">
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--primary);
-}
+            <div class="skill-icon">
+                <i class="fab fa-css3-alt"></i>
+            </div>
 
-.contact-form textarea {
-    resize: vertical;
-}
+            <h3>CSS</h3>
 
+            <div class="skill-bar">
+                <span style="width: 85%;"></span>
+            </div>
 
-/* =========================
-   FOOTER
-========================= */
+            <small>Web Design</small>
 
-footer {
-    background: #05070b;
+        </div>
 
-    padding: 50px 30px;
 
-    text-align: center;
-}
 
-.footer-content h3 {
-    font-size: 25px;
-}
+        <div class="skill-card">
 
-.footer-content h3 span {
-    color: var(--primary);
-}
+            <div class="skill-icon">
+                <i class="fab fa-js"></i>
+            </div>
 
-.footer-content > p {
-    color: var(--muted);
+            <h3>JavaScript</h3>
 
-    font-size: 13px;
+            <div class="skill-bar">
+                <span style="width: 70%;"></span>
+            </div>
 
-    margin: 10px 0 20px;
-}
+            <small>Web Development</small>
 
-.footer-social {
-    display: flex;
+        </div>
 
-    justify-content: center;
 
-    gap: 15px;
 
-    margin-bottom: 25px;
-}
+        <div class="skill-card">
 
-.footer-social a {
-    width: 40px;
-    height: 40px;
+            <div class="skill-icon">
+                <i class="fas fa-database"></i>
+            </div>
 
-    border: 1px solid var(--border);
+            <h3>MySQL</h3>
 
-    border-radius: 50%;
+            <div class="skill-bar">
+                <span style="width: 75%;"></span>
+            </div>
 
-    display: flex;
+            <small>Database</small>
 
-    align-items: center;
-    justify-content: center;
+        </div>
 
-    color: var(--muted);
 
-    transition: 0.3s;
-}
 
-.footer-social a:hover {
-    color: var(--primary);
+        <div class="skill-card">
 
-    border-color: var(--primary);
-}
+            <div class="skill-icon">
+                <i class="fas fa-server"></i>
+            </div>
 
-.copyright {
-    border-top: 1px solid var(--border);
+            <h3>DBMS</h3>
 
-    padding-top: 20px;
-}
+            <div class="skill-bar">
+                <span style="width: 80%;"></span>
+            </div>
 
+            <small>Database Management</small>
 
-/* =========================
-   BACK TO TOP
-========================= */
+        </div>
 
-.back-to-top {
-    position: fixed;
 
-    right: 25px;
-    bottom: 25px;
 
-    width: 45px;
-    height: 45px;
+        <div class="skill-card">
 
-    background: var(--primary);
+            <div class="skill-icon">
+                <i class="fas fa-leaf"></i>
+            </div>
 
-    color: #001018;
+            <h3>MongoDB</h3>
 
-    border-radius: 50%;
+            <div class="skill-bar">
+                <span style="width: 65%;"></span>
+            </div>
 
-    display: flex;
+            <small>NoSQL Database</small>
 
-    align-items: center;
-    justify-content: center;
+        </div>
 
-    opacity: 0;
 
-    pointer-events: none;
+    </div>
 
-    transition: 0.3s;
 
-    z-index: 999;
-}
+</section>
 
-.back-to-top.show {
-    opacity: 1;
 
-    pointer-events: auto;
-}
 
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
 
-/* =========================
-   MOBILE
-========================= */
+<section class="section dark-section"
+         id="projects">
 
-@media (max-width: 1000px) {
 
-    .skills-container {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
+    <div class="section-heading">
 
-    .projects-container {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
+        <p>MY RECENT WORK</p>
 
-    .certificate-container {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
+        <h2>
+            Featured <span>Projects</span>
+        </h2>
 
-    .hero {
-        gap: 40px;
-    }
+    </div>
 
-}
 
 
-@media (max-width: 800px) {
+    <div class="projects-container">
 
-    .menu-btn {
-        display: block;
-    }
 
-    .nav-links {
-        position: absolute;
+        <!-- Project 1 -->
 
-        top: 70px;
-        left: 0;
+        <div class="project-card">
 
-        width: 100%;
 
-        background: #0b1018;
+            <div class="project-top">
 
-        flex-direction: column;
 
-        align-items: center;
+                <div class="project-icon">
 
-        gap: 20px;
+                    <i class="fas fa-search"></i>
 
-        padding: 25px;
+                </div>
 
-        transform: translateY(-150%);
 
-        transition: 0.3s;
-    }
+                <div class="project-links">
 
-    .nav-links.active {
-        transform: translateY(0);
-    }
+                    <a href="#"
+                       aria-label="Project link">
 
+                        <i class="fas fa-external-link-alt"></i>
 
-    .hero {
-        flex-direction: column;
+                    </a>
 
-        text-align: center;
+                </div>
 
-        padding-top: 130px;
-    }
 
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
+            </div>
 
-    .hero-buttons,
-    .social-links {
-        justify-content: center;
-    }
 
-    .hero-image {
-        min-width: auto;
-    }
+            <h3>
+                Lost and Found Portal
+            </h3>
 
-    .profile-circle {
-        width: 280px;
-        height: 280px;
-    }
 
-    .profile-placeholder {
-        width: 220px;
-        height: 220px;
-    }
+            <p>
 
+                A web-based college management solution
+                designed to help students report, search
+                and manage lost and found items.
 
-    .about-container {
-        grid-template-columns: 1fr;
-    }
+            </p>
 
-    .about-image {
-        max-width: 350px;
-        width: 100%;
 
-        margin: auto;
-    }
+            <div class="project-tech">
 
-    .about-content {
-        text-align: center;
-    }
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Python</span>
+                <span>Flask</span>
+                <span>MySQL</span>
 
-}
+            </div>
 
 
-@media (max-width: 600px) {
+        </div>
 
-    .section {
-        padding: 80px 20px;
-    }
 
-    .section-heading h2 {
-        font-size: 32px;
-    }
 
-    .skills-container,
-    .projects-container,
-    .certificate-container {
-        grid-template-columns: 1fr;
-    }
+        <!-- Project 2 -->
 
-    .about-info {
-        grid-template-columns: 1fr;
-    }
+        <div class="project-card">
 
-    .training-box {
-        flex-direction: column;
-    }
 
-    .hero h2 {
-        font-size: 21px;
-    }
+            <div class="project-top">
 
-    .floating-card {
-        display: none;
-    }
 
-}
+                <div class="project-icon">
+
+                    <i class="fas fa-seedling"></i>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a href="#"
+                       aria-label="Project link">
+
+                        <i class="fas fa-external-link-alt"></i>
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <h3>
+                KisanLink
+            </h3>
+
+
+            <p>
+
+                A farmer-buyer marketplace concept designed
+                to improve market connections and provide
+                agricultural market price information.
+
+            </p>
+
+
+            <div class="project-tech">
+
+                <span>Python</span>
+                <span>Flask</span>
+                <span>MySQL</span>
+                <span>HTML</span>
+                <span>CSS</span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Project 3 -->
+
+        <div class="project-card">
+
+
+            <div class="project-top">
+
+
+                <div class="project-icon">
+
+                    <i class="fas fa-users"></i>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a href="#"
+                       aria-label="Project link">
+
+                        <i class="fas fa-external-link-alt"></i>
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <h3>
+                Social Media Management System
+            </h3>
+
+
+            <p>
+
+                A database project for managing users,
+                posts, comments, likes, following and
+                messaging using MongoDB.
+
+            </p>
+
+
+            <div class="project-tech">
+
+                <span>MongoDB</span>
+                <span>NoSQL</span>
+                <span>Database</span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CERTIFICATES
+===================================================== -->
+
+<section class="section"
+         id="certificates">
+
+
+    <div class="section-heading">
+
+        <p>LEARNING & ACHIEVEMENTS</p>
+
+        <h2>
+            Certificates & <span>Training</span>
+        </h2>
+
+    </div>
+
+
+
+    <div class="certificate-container">
+
+
+        <div class="certificate-card">
+
+
+            <div class="certificate-icon">
+
+                <i class="fas fa-certificate"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Java Programming Training
+                </h3>
+
+                <p>
+                    Tap Academy
+                </p>
+
+                <span>
+                    Programming & Development
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="certificate-card">
+
+
+            <div class="certificate-icon">
+
+                <i class="fas fa-laptop-code"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Web Development Learning
+                </h3>
+
+                <p>
+                    Practical Training
+                </p>
+
+                <span>
+                    HTML, CSS & Web Technologies
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="certificate-card">
+
+
+            <div class="certificate-icon">
+
+                <i class="fas fa-database"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Database & DBMS Learning
+                </h3>
+
+                <p>
+                    Academic Project
+                </p>
+
+                <span>
+                    SQL, MySQL & Database Concepts
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     TRAINING
+===================================================== -->
+
+<section class="section training-section">
+
+
+    <div class="section-heading">
+
+        <p>CONTINUOUS LEARNING</p>
+
+        <h2>
+            My <span>Training</span>
+        </h2>
+
+    </div>
+
+
+
+    <div class="training-box">
+
+
+        <div class="training-icon">
+
+            <i class="fas fa-code"></i>
+
+        </div>
+
+
+        <div class="training-content">
+
+
+            <h3>
+                Tap Academy Training Program
+            </h3>
+
+
+            <p>
+
+                Participating in a structured technical
+                learning program focused on programming,
+                Java and software development concepts.
+
+            </p>
+
+
+            <div class="training-tags">
+
+                <span>Java</span>
+                <span>Programming</span>
+                <span>Problem Solving</span>
+                <span>Software Development</span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     GITHUB
+===================================================== -->
+
+<section class="github-section">
+
+
+    <div>
+
+
+        <i class="fab fa-github github-large"></i>
+
+
+        <h2>
+            Explore My GitHub
+        </h2>
+
+
+        <p>
+
+            Check out my projects, coding practice
+            and development work.
+
+        </p>
+
+
+        <a href="https://github.com/kubra67076-sketch"
+           target="_blank"
+           class="btn primary-btn">
+
+            <i class="fab fa-github"></i>
+
+            Visit GitHub
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="section"
+         id="contact">
+
+
+    <div class="section-heading">
+
+        <p>LET'S CONNECT</p>
+
+        <h2>
+            Contact <span>Me</span>
+        </h2>
+
+    </div>
+
+
+
+    <div class="contact-container">
+
+
+        <div class="contact-info">
+
+
+            <h3>
+                Let's work together
+            </h3>
+
+
+            <p>
+
+                I am interested in learning,
+                collaborating on projects and
+                connecting with people interested
+                in technology.
+
+            </p>
+
+
+
+            <!-- Email -->
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    <i class="fas fa-envelope"></i>
+
+                </div>
+
+
+                <div>
+
+                    <small>Email</small>
+
+                    <p>
+                        kubra67076@gmail.com
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- GitHub -->
+
+            <div class="contact-item">
+
+
+                <div class="contact-icon">
+
+                    <i class="fab fa-github"></i>
+
+                </div>
+
+
+                <div>
+
+                    <small>GitHub</small>
+
+                    <p>
